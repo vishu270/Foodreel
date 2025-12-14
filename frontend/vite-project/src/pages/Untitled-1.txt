@@ -1,0 +1,7 @@
+
+/useer/register => user register form
+/user/login =user login 
+
+
+/foodPartner/register => register form
+/foodPartner/login => login form 

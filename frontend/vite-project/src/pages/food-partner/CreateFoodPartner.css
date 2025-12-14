@@ -1,0 +1,120 @@
+.create-food-page {
+  min-height: 100vh;
+  padding: 16px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Page title */
+.page-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Form card */
+.food-form {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Form group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label,
+.form-group label {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ========================= */
+/* ✅ VIDEO UPLOAD UI */
+/* ========================= */
+
+.video-upload-box {
+  border: 1.5px dashed var(--border);
+  border-radius: 14px;
+  padding: 22px;
+  text-align: center;
+  cursor: pointer;
+  background: var(--card);
+  transition: all 0.25s ease;
+  color: var(--muted);
+}
+
+.video-upload-box svg {
+  margin-bottom: 8px;
+}
+
+.video-upload-box:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* When file selected (nice UX) */
+.video-upload-box:has(input:valid) {
+  border-style: solid;
+  border-color: var(--accent);
+}
+
+/* Upload text */
+.upload-text {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Upload hint */
+.upload-subtext {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* ========================= */
+/* INPUTS */
+/* ========================= */
+
+.form-group input,
+.form-group textarea {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.form-group textarea {
+  resize: none;
+}
+
+/* ========================= */
+/* SUBMIT BUTTON */
+/* ========================= */
+
+.submit-btn {
+  margin-top: 10px;
+  padding: 12px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-btn:active {
+  transform: scale(0.97);
+}

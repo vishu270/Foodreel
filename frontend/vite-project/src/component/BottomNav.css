@@ -1,0 +1,26 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #050b1c;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #1c2a4a;
+  z-index: 20;
+}
+
+.bottom-nav a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom-nav a.active {
+  color: #fff;
+}

@@ -1,0 +1,28 @@
+@import "../styles/vars.css";
+
+.auth-card{
+  max-width:480px;
+  margin:28px auto;
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow:var(--shadow);
+}
+.auth-card h2{margin:0 0 12px 0;font-size:20px}
+.auth-grid{display:grid;gap:12px}
+.field label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+.field input, .field select{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid var(--input-border);
+  border-radius:8px;
+  background:var(--input-bg);
+  color:var(--text);
+}
+.actions{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.btn{padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
+.btn.primary{background:var(--accent);color:var(--accent-contrast)}
+.muted{color:var(--muted);font-size:13px}
+
+/* responsive */
+@media (max-width:520px){.auth-card{margin:18px;padding:16px}}

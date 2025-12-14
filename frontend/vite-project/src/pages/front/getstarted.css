@@ -1,0 +1,71 @@
+.get-started-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #050b1c, #0b1535);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-top: -80px;
+}
+
+.logo {
+  font-size: 22px;
+  margin-bottom: 12px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+
+.gs-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.gs-subtitle {
+  font-size: 14px;
+  color: #b8c1ff;
+  margin-bottom: 30px;
+}
+
+.gs-card-container {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.gs-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.gs-card:hover {
+  transform: scale(1.03);
+  border-color: #4f6bff;
+  background: rgba(79, 107, 255, 0.15);
+}
+
+.gs-emoji {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.gs-card h3 {
+  margin: 6px 0;
+  font-size: 18px;
+}
+
+.gs-card p {
+  font-size: 13px;
+  color: #cbd2ff;
+}
