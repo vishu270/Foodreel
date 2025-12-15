@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./createFoodPartner.css";
+import "./CreateFoodPartner.css";
 import axios from "axios";
 // use import.meta.env.VITE_BACKEND_URL
 import { useNavigate } from "react-router-dom";
