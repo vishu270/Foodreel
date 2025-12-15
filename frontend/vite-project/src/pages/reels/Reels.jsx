@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+// use env var directly
 
 // ✅ correct imports based on your folder structure
 import ReelItem from "../../component/reels/ReelItem";
@@ -18,10 +19,7 @@ function Reels() {
   useEffect(() => {
     async function fetchReels() {
       try {
-        const res = await axios.get(
-          "http://localhost:3000/api/food",
-          { withCredentials: true }
-        );
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/food`, { withCredentials: true });
 
         setReelsData(res.data.foodItems || []);
       } catch (err) {

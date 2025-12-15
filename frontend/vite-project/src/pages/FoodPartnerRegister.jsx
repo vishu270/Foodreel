@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+// using import.meta.env.VITE_BACKEND_URL directly
 import { useNavigate } from "react-router-dom";
 
 export default function FoodPartnerRegister() {
@@ -13,8 +14,7 @@ export default function FoodPartnerRegister() {
     const email = e.target.email.value;
     const password = e.target.password.value; 
 
-    const response = await axios.post(
-      "http://localhost:3000/foodPartner/register",
+    const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_URL || 'http://localhost:3000'}/foodpartner/register`,
       {
         name: name,
         email: email,

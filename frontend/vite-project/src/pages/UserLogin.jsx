@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+// use import.meta.env.VITE_BACKEND_URL directly
 import { useNavigate } from "react-router-dom";
 
 
@@ -13,7 +14,8 @@ export default function UserLogin() {
         const password = e.target.password.value;
       
             const response = await axios.post(
-                "http://localhost:3000/user/login", 
+              `${import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_URL || 'http://localhost:3000'}/user/login`, 
+              
                 {
                 email,
                 password,

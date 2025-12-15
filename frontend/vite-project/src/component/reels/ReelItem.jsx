@@ -3,6 +3,7 @@ import "./reels.css";
 import { Link } from "react-router-dom";
 import { FaHeart, FaBookmark, FaCommentDots } from "react-icons/fa";
 import axios from "axios";
+// use direct backend env
 
 function ReelItem({ reel, videoRef }) {
   // ✅ SAFE INITIAL STATE
@@ -14,7 +15,7 @@ function ReelItem({ reel, videoRef }) {
   const handleLike = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/food/like",
+        `${import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/food/like`,
         { foodItemId: reel._id },
         { withCredentials: true }
       );
@@ -31,7 +32,7 @@ function ReelItem({ reel, videoRef }) {
   const handleSave = async () => {
     try {
       await axios.post(
-        "http://localhost:3000/api/food/save",
+        `${import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/food/save`,
         { foodItemId: reel._id },
         { withCredentials: true }
       );

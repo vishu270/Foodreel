@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./createFoodPartner.css";
 import axios from "axios";
+// use import.meta.env.VITE_BACKEND_URL
 import { useNavigate } from "react-router-dom";
 
 const CreateFoodPartner = () => {
@@ -43,7 +44,7 @@ const CreateFoodPartner = () => {
       data.append("video", formData.video);
 
       const response = await axios.post(
-        "http://localhost:3000/api/food",
+        `${import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/food`,
         data,
         {
           withCredentials: true,

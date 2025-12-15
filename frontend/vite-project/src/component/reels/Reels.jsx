@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import ReelItem from "../../component/reels/ReelItem";
 import "../../component/reels/reels.css";
 import axios from "axios";
+// use import.meta.env.VITE_BACKEND_URL directly
 
 function Reels() {
   const videoRefs = useRef([]);
@@ -12,11 +13,7 @@ function Reels() {
 
   useEffect(() => {
     async function fetchReels() {
-      const res = await axios.get(
-        "http://localhost:3000/api/food",
-        { withCredentials: true }
-        
-      );
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/food`, { withCredentials: true });
       setReelsData(res.data.foodItems || []);
     }
     fetchReels();

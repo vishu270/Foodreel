@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { api, API_URL } from "../../config";
 import { useNavigate } from "react-router-dom";
 import BottomNav from "../../component/BottomNav";
 import "./profile.css";
@@ -19,18 +20,12 @@ const Profile = () => {
   useEffect(() => {
     async function fetchProfile() {
       try {
-        const userRes = await axios.get(
-          "http://localhost:3000/user/me",
-          { withCredentials: true }
-        );
+        const userRes = await axios.get(`${import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_URL || 'http://localhost:3000'}/user/me`, { withCredentials: true });
 
         setUser(userRes.data.user);
         setFullname(userRes.data.user.fullname);
 
-        const savedRes = await axios.get(
-          "http://localhost:3000/api/food/saved",
-          { withCredentials: true }
-        );
+        const savedRes = await axios.get(`${import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/food/saved`, { withCredentials: true });
 
         setSavedFoods(savedRes.data.savedItems || []);
       } catch (err) {
@@ -46,7 +41,7 @@ const Profile = () => {
   // ================= LOGOUT =================
   async function handleLogout() {
     try {
-      await axios.get("http://localhost:3000/user/logout", {
+      await axios.get(`${import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_URL || 'http://localhost:3000'}/user/logout`, {
         withCredentials: true,
       });
       navigate("/");
@@ -64,8 +59,7 @@ const Profile = () => {
         formData.append("profileImage", profileImage);
       }
 
-      const res = await axios.put(
-        "http://localhost:3000/user/me",
+      const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_URL || 'http://localhost:3000'}/user/me`,
         formData,
         {
           withCredentials: true,
@@ -109,11 +103,7 @@ const Profile = () => {
 
           <img
             className="profile-avatar"
-            src={
-              user.profileImage
-                ? `http://localhost:3000${user.profileImage}`
-                : "https://i.pravatar.cc/150"
-            }
+            src={user.profileImage ? `${import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_URL || 'http://localhost:3000'}${user.profileImage}` : "https://i.pravatar.cc/150"}
             alt="avatar"
           />
 

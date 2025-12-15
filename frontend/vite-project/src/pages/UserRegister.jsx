@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+// use import.meta.env.VITE_BACKEND_URL (fallbacks added inline)
 import { useNavigate } from "react-router-dom";
 
 export default function UserRegister() {
@@ -15,7 +16,7 @@ export default function UserRegister() {
 
     // try {
       const response = await axios.post(
-        "http://localhost:3000/user/register",
+        `${import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_URL || 'http://localhost:3000'}/user/register`,
         {
           name: fullName,
           email: email,

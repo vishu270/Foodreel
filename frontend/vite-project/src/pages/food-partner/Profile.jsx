@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+// use import.meta.env.VITE_BACKEND_URL directly
 import "./profile.css";
 
 function Profile() {
@@ -12,10 +13,7 @@ function Profile() {
   useEffect(() => {
     async function fetchProfile() {
       try {
-        const res = await axios.get(
-          `http://localhost:3000/api/food/partner/${id}`,
-          { withCredentials: true }
-        );
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/food/partner/${id}`, { withCredentials: true });
 
         const items = res.data.foodItems || [];
         setFoodItems(items);

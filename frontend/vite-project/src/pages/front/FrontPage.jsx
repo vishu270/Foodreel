@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+// use Vite env directly
 import BottomNav from "../../component/BottomNav";
 import "./frontpage.css";
 
@@ -27,16 +28,14 @@ function FrontPage() {
 
   // 🔐 Check login
   useEffect(() => {
-    axios
-      .get("http://localhost:3000/user/me", { withCredentials: true })
+    axios.get(`${import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_URL || 'http://localhost:3000'}/user/me`, { withCredentials: true })
       .then((res) => setUser(res.data.user))
       .catch(() => setUser(null));
   }, []);
 
   // 🎥 Fetch preview reels
   useEffect(() => {
-    axios
-      .get("http://localhost:3000/api/food", { withCredentials: true })
+    axios.get(`${import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/food`, { withCredentials: true })
       .then((res) => {
         setReels(res.data.foodItems?.slice(0, 9) || []);
       })
