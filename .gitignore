@@ -1,0 +1,14 @@
+# dependencies
+node_modules
+Backend/node_modules
+frontend/node_modules
+frontend/vite-project/node_modules
+
+# env files
+.env
+Backend/src/.env
+frontend/vite-project/.env
+
+# build
+dist
+build
