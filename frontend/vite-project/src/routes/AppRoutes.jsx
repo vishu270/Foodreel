@@ -13,7 +13,7 @@ import FoodPartnerRegister from "../pages/FoodPartnerRegister";
 import FoodPartnerLogin from "../pages/FoodPartnerLogin";
 
 // ===== FOOD PARTNER =====
-import CreateFoodPartner from "../pages/food-partner/CReateFoodPartner";
+import CreateFoodPartner from "../pages/food-partner/CreateFoodPartner";
 import FoodPartnerProfile from "../pages/food-partner/Profile";
 
 // ===== REELS & SAVED =====
